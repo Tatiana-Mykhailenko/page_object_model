@@ -13,6 +13,9 @@ class BasePage():
         self.url = url
         self.browser.implicitly_wait(timeout)
 
+    def compare_data(self, text1, text2):
+        assert text1 == text2, 'Different book name or price'
+
     def go_to_basket(self):
         try:
             basket_button = self.browser.find_element(
